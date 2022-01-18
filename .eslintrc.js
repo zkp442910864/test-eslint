@@ -1,3 +1,6 @@
+// https://cn.eslint.org/docs/user-guide/getting-started
+// https://cn.eslint.org/docs/user-guide/configuring
+
 module.exports = {
     env: {
         node: true,

@@ -4,7 +4,9 @@
     "description": "常用的 eslint 检测",
     "main": "index.js",
     "scripts": {
-        "lint": "eslint .eslintrc.js --fix"
+        "lint": "eslint .eslintrc.js --fix",
+        "test1": "npm adduser",
+        "test2": "npm publish"
     },
     "author": "",
     "license": "ISC",
