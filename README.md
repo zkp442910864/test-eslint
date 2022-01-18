@@ -1,2 +1,10 @@
-# test-eslint
-常用的 eslint 检测
+# @zzzz-/eslint-config-test
+
+```js
+    module.exports = {
+        extends: [
+            '@zzzz-/eslint-config-test',
+        ],
+    }
+```
+
