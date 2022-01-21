@@ -1,5 +1,6 @@
 // https://cn.eslint.org/docs/user-guide/getting-started
 // https://cn.eslint.org/docs/user-guide/configuring
+// (() => {console.log(12, {a: 1});})();
 
 module.exports = {
     env: {
@@ -8,6 +9,10 @@ module.exports = {
         commonjs: true,
         // amd: true,
     },
+    // https://eslint.org/docs/user-guide/configuring/ignoring-code
+    ignorePatterns: [
+        '!.eslintrc.js',
+    ],
     extends: [
         'plugin:react/recommended',
         'plugin:vue/vue3-recommended',
@@ -19,13 +24,18 @@ module.exports = {
         ecmaVersion: 12,
         sourceType: 'module',
         ecmaFeatures: {
-            jsx: true
-        }
+            jsx: true,
+        },
     },
     plugins: [
         '@typescript-eslint',
-        'react'
+        'react',
     ],
+    settings: {
+        react: {
+            version: 'detect',
+        },
+    },
     overrides: [
         {
             files: ['*.vue', '*.nvue'],
@@ -44,7 +54,7 @@ module.exports = {
                     // }
                 }],
                 'vue/no-multiple-template-root': 'off',
-                '@typescript-eslint/indent': 'off',
+                // '@typescript-eslint/indent': 'off',
                 'vue/html-quotes': ['error', 'double'],
                 // "vue/no-multiple-objects-in-class": ["error"],
                 // "vue/component-tags-order": ["error", {
@@ -59,7 +69,7 @@ module.exports = {
                 'vue/html-indent': ['error', 4, {
                     baseIndent: 1,
                     switchCase: 1,
-                    ignores: []
+                    ignores: [],
                 }],
                 // "@typescript-eslint/indent": ["error", 4, {  // script标签缩进设置
                 //     // "BaseIndent": 1,
@@ -75,10 +85,11 @@ module.exports = {
                 //     // "ignores": ['lang="ts"']
                 //     "ignoredNodes": ["ImportDeclaration", "FunctionDeclaration"]
                 // }],
-            }
-        }
+            },
+        },
     ],
     rules: {
+        // TODO: 0|off关闭 1警告 2|error错误
         // https://cnpmjs.org/package/@typescript-eslint/eslint-plugin
         // https://github.com/typescript-eslint/typescript-eslint/blob/v1.13.0/packages/eslint-plugin/docs/rules/indent.md
         '@typescript-eslint/indent': ['error', 4, { // script标签缩进设置
@@ -116,7 +127,7 @@ module.exports = {
         indent: ['error', 4], // 缩进风格
         // indent: ['off'], // 缩进风格
         semi: [2, 'always'], // 语句强制分号结尾
-        'comma-dangle': ['error', 'only-multiline'], // 对象字面量项尾不能有逗号
+        'comma-dangle': ['error', 'always-multiline'], // 对象字面量项尾不能有逗号
         'no-unused-expressions': ['error', {
             allowShortCircuit: true,
             allowTernary: true,
@@ -124,7 +135,6 @@ module.exports = {
         }], // 禁止无用的表达式
         // "space-before-function-paren": [0, "always"],//函数定义时括号前面要不要有空格
         // "object-curly-spacing": ["error", "never"],
-        'object-curly-spacing': [0, 'never'], // 大括号内是否允许不必要的空格
         'no-multiple-empty-lines': [1, {max: 3}], // 空行最多不能超过2行
         'no-useless-return': ['off'], // 不允许没有内容的 return
         'no-lone-blocks': ['off'], // 禁止不必要的嵌套块
@@ -146,6 +156,10 @@ module.exports = {
         'quote-props': [1, 'as-needed'], //对象字面量中的属性名是否强制双引号
         'no-unused-vars': [1],
         'comma-spacing': 1, //逗号前后的空格
+        'no-multi-spaces': 1, //不能用多余的空格
+        'array-bracket-spacing': [2, 'never'], //是否允许非空数组里面有多余的空格
+        'object-curly-spacing': [2, 'never'], // 大括号内是否允许不必要的空格
+        'space-in-parens': [2, 'never'], //小括号里面要不要有空格
 
 
         // "no-array-constructor": 2,//禁止使用数组构造器
@@ -190,7 +204,6 @@ module.exports = {
         // "no-mixed-requires": [0, false],//声明时不能混用声明类型
         // "no-mixed-spaces-and-tabs": [2, false],//禁止混用tab和空格
         // "linebreak-style": [0, "windows"],//换行风格
-        // "no-multi-spaces": 1,//不能用多余的空格
         // "no-multi-str": 2,//字符串不能用\换行
         // "no-native-reassign": 2,//不能重写native对象
         // "no-negated-in-lhs": 2,//in 操作符的左边不能有!
@@ -237,7 +250,6 @@ module.exports = {
         // "no-warning-comments": [1, { "terms": ["todo", "fixme", "xxx"], "location": "start" }],//不能有警告备注
         // "no-with": 2,//禁用with
 
-        // "array-bracket-spacing": [2, "never"],//是否允许非空数组里面有多余的空格
         // "arrow-parens": 0,//箭头函数用小括号括起来
         // "arrow-spacing": 0,//=>的前/后括号
         // "accessor-pairs": 0,//在对象中使用getter/setter
@@ -286,7 +298,6 @@ module.exports = {
         // "sort-vars": 0,//变量声明时排序
         // "space-after-keywords": [0, "always"],//关键字后面是否要空一格
         // "space-before-blocks": [0, "always"],//不以新行开始的块{前面要不要有空格
-        // "space-in-parens": [0, "never"],//小括号里面要不要有空格
         // "space-infix-ops": 0,//中缀操作符周围要不要有空格
         // "space-return-throw-case": 2,//return throw case后面要不要加空格
         // "space-unary-ops": [0, { "words": true, "nonwords": false }],//一元运算符的前/后要不要加空格
@@ -299,5 +310,5 @@ module.exports = {
         // "wrap-iife": [2, "inside"],//立即执行函数表达式的小括号风格
         // "wrap-regex": 0,//正则表达式字面量用小括号包起来
         // "yoda": [2, "never"]//禁止尤达条件
-    }
+    },
 };
