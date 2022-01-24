@@ -124,7 +124,10 @@ module.exports = {
         // "no-tabs": ["error", {allowIndentationTabs: true}],
         // "indent": ["error", "tab"],//缩进风格
         // indent: ['error', 4, {SwitchCase: 1, ignoredNodes: ['TemplateLiteral']}], // 缩进风格
-        indent: ['error', 4], // 缩进风格
+        indent: ['error', 4, {
+            SwitchCase: 1,
+            ignoredNodes: ['TemplateLiteral'],
+        }],
         // indent: ['off'], // 缩进风格
         semi: [2, 'always'], // 语句强制分号结尾
         'comma-dangle': ['error', 'always-multiline'], // 对象字面量项尾不能有逗号
