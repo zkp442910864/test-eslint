@@ -2,6 +2,8 @@
 // https://cn.eslint.org/docs/user-guide/configuring
 // (() => {console.log(12, {a: 1});})();
 
+const reactRules = require('./src/reactRules');
+
 module.exports = {
     env: {
         node: true,
@@ -16,7 +18,13 @@ module.exports = {
     extends: [
         'plugin:react/recommended',
         'plugin:vue/vue3-recommended',
+
         'plugin:@typescript-eslint/recommended',
+
+        'plugin:import/recommended',
+        'plugin:import/errors',
+        'plugin:import/warnings',
+
         'eslint:recommended',
     ],
     parser: '@typescript-eslint/parser',
@@ -89,7 +97,8 @@ module.exports = {
         },
     ],
     rules: {
-        // TODO: 0|off关闭 1警告 2|error错误
+        ...reactRules,
+        // TODO: 0|off关闭 1|wran警告 2|error错误
         // https://cnpmjs.org/package/@typescript-eslint/eslint-plugin
         // https://github.com/typescript-eslint/typescript-eslint/blob/v1.13.0/packages/eslint-plugin/docs/rules/indent.md
         '@typescript-eslint/indent': ['error', 4, { // script标签缩进设置
@@ -155,16 +164,18 @@ module.exports = {
         'no-extra-parens': ['off'], // 禁止非必要的括号
         // "camelcase": ["off"],//强制驼峰法命名
         'no-debugger': 1, // 禁止使用debugger
-        quotes: ['error', 'single'], //引号类型 `` "" ''
-        'quote-props': [1, 'as-needed'], //对象字面量中的属性名是否强制双引号
+        quotes: ['error', 'single'], // 引号类型 `` "" ''
+        'quote-props': [1, 'as-needed'], // 对象字面量中的属性名是否强制双引号
         'no-unused-vars': [1],
-        'comma-spacing': 1, //逗号前后的空格
-        'no-multi-spaces': 1, //不能用多余的空格
-        'array-bracket-spacing': [2, 'never'], //是否允许非空数组里面有多余的空格
+        'comma-spacing': 1, // 逗号前后的空格
+        'no-multi-spaces': 1, // 不能用多余的空格
+        'array-bracket-spacing': [2, 'never'], // 是否允许非空数组里面有多余的空格
         'object-curly-spacing': [2, 'never'], // 大括号内是否允许不必要的空格
-        'space-in-parens': [2, 'never'], //小括号里面要不要有空格
+        'space-in-parens': [2, 'never'], // 小括号里面要不要有空格
+        'spaced-comment': 2, // 注释风格要不要有空格什么的
+        'lines-between-class-members': 2, // 要求或禁止在类成员之间出现空行
 
-
+        'import/order': ['error'],
         // "no-array-constructor": 2,//禁止使用数组构造器
         // "no-bitwise": 0,//禁止使用按位运算符
         // "no-caller": 1,//禁止使用arguments.caller或arguments.callee
@@ -304,7 +315,6 @@ module.exports = {
         // "space-infix-ops": 0,//中缀操作符周围要不要有空格
         // "space-return-throw-case": 2,//return throw case后面要不要加空格
         // "space-unary-ops": [0, { "words": true, "nonwords": false }],//一元运算符的前/后要不要加空格
-        // "spaced-comment": 0,//注释风格要不要有空格什么的
         // "strict": 2,//使用严格模式
         // "use-isnan": 2,//禁止比较时使用NaN，只能用isNaN()
         // "valid-jsdoc": 0,//jsdoc规则
