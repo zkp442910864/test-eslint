@@ -43,6 +43,12 @@ module.exports = {
         react: {
             version: 'detect',
         },
+        'import/resolver': {
+            node: {
+                paths: ['src'],
+                extensions: ['.js', '.jsx', '.ts', '.tsx'],
+            },
+        },
     },
     overrides: [
         {
@@ -174,8 +180,8 @@ module.exports = {
         'space-in-parens': [2, 'never'], // 小括号里面要不要有空格
         'spaced-comment': 2, // 注释风格要不要有空格什么的
         'lines-between-class-members': 2, // 要求或禁止在类成员之间出现空行
+        'import/order': ['error'], // https://github.com/import-js/eslint-plugin-import
 
-        'import/order': ['error'],
         // "no-array-constructor": 2,//禁止使用数组构造器
         // "no-bitwise": 0,//禁止使用按位运算符
         // "no-caller": 1,//禁止使用arguments.caller或arguments.callee
