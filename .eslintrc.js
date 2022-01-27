@@ -3,6 +3,7 @@
 // (() => {console.log(12, {a: 1});})();
 
 const reactRules = require('./src/reactRules');
+const importRules = require('./src/importRules');
 
 module.exports = {
     env: {
@@ -43,10 +44,17 @@ module.exports = {
         react: {
             version: 'detect',
         },
+        'import/extensions': ['.ts', '.js', '.jsx', '.json'],
         'import/resolver': {
+            alias: {
+                map: [
+                    ['@', './src'],
+                ],
+                extensions: ['.ts', '.js', '.jsx', '.json'],
+            },
             node: {
-                paths: ['src'],
-                extensions: ['.js', '.jsx', '.ts', '.tsx'],
+                paths: ['.'],
+                extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
             },
         },
     },
@@ -104,6 +112,7 @@ module.exports = {
     ],
     rules: {
         ...reactRules,
+        ...importRules,
         // TODO: 0|off关闭 1|wran警告 2|error错误
         // https://cnpmjs.org/package/@typescript-eslint/eslint-plugin
         // https://github.com/typescript-eslint/typescript-eslint/blob/v1.13.0/packages/eslint-plugin/docs/rules/indent.md
@@ -180,7 +189,6 @@ module.exports = {
         'space-in-parens': [2, 'never'], // 小括号里面要不要有空格
         'spaced-comment': 2, // 注释风格要不要有空格什么的
         'lines-between-class-members': 2, // 要求或禁止在类成员之间出现空行
-        'import/order': ['error'], // https://github.com/import-js/eslint-plugin-import
 
         // "no-array-constructor": 2,//禁止使用数组构造器
         // "no-bitwise": 0,//禁止使用按位运算符
