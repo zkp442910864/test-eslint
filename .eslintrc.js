@@ -189,6 +189,10 @@ module.exports = {
         'space-in-parens': [2, 'never'], // 小括号里面要不要有空格
         'spaced-comment': 2, // 注释风格要不要有空格什么的
         'lines-between-class-members': 2, // 要求或禁止在类成员之间出现空行
+        // 在对象文字属性中强制键和值之间的间距一致
+        'key-spacing': [2, {afterColon: true, beforeColon: false}],
+        // 需要在中缀运算符周围留有间距
+        'space-infix-ops': ['error', {int32Hint: false}],
 
         // "no-array-constructor": 2,//禁止使用数组构造器
         // "no-bitwise": 0,//禁止使用按位运算符
