@@ -89,7 +89,7 @@ module.exports = {
         },
     ],
     rules: {
-        // TODO: 0|off关闭 1警告 2|error错误
+        // TODO: 0|off=关闭，1=警告，2|error=错误
         // https://cnpmjs.org/package/@typescript-eslint/eslint-plugin
         // https://github.com/typescript-eslint/typescript-eslint/blob/v1.13.0/packages/eslint-plugin/docs/rules/indent.md
         '@typescript-eslint/indent': ['error', 4, { // script标签缩进设置
