@@ -1,7 +1,7 @@
 module.exports = {
     'react/display-name': 0,
-    'react/jsx-indent': [4, 4],
-    'react/jsx-indent-props': [4, 4],
+    // 'react/jsx-indent': [4, 4],
+    // 'react/jsx-indent-props': [4, 4],
     // 禁止组件上的某些道具 如：style className
     // 'react/forbid-component-props': ['error'],
     // 禁止 DOM 节点上的某些道具 如：id style
