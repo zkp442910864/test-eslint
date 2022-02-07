@@ -7,9 +7,12 @@ const publicRules = require('./src/rules/public');
 const reactRules = require('./src/rules/react');
 const vueRules = require('./src/rules/vue');
 
-module.exports = {
+const otherRules = {
     reactRules,
     vueRules,
+};
+
+const config = {
     env: {
         node: true,
         browser: true,
@@ -69,3 +72,6 @@ module.exports = {
         ...publicRules,
     },
 };
+
+config.__proto__ = otherRules;
+module.exports = config;
