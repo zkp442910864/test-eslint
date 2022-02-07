@@ -1,7 +1,7 @@
 module.exports = {
     // https://github.com/import-js/eslint-plugin-import
     'import/order': ['error', {
-        groups:  [
+        groups: [
             ['object', 'type'],
 
             ['builtin', 'external'],
