@@ -49,11 +49,16 @@
     // vue .eslintrc.js
     const allConfig = require('@zzzz-/eslint-config-test');
     module.exports = {
+        // https://eslint.vuejs.org/user-guide/#usage
         extends: [
             'plugin:vue/vue3-recommended',
             // 'plugin:vue/recommended' // Use this if you are using Vue.js 2.x.
             '@zzzz-/eslint-config-test',
         ],
+        parser: 'vue-eslint-parser',
+        parserOptions: {
+            parser: '@typescript-eslint/parser',
+        },
         overrides: [
             {
                 files: ['*.vue', '*.nvue'],

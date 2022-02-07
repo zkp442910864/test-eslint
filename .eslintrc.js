@@ -7,10 +7,9 @@ const publicRules = require('./src/rules/public');
 const reactRules = require('./src/rules/react');
 const vueRules = require('./src/rules/vue');
 
-module.reactRules = reactRules;
-module.vueRules = vueRules;
-
 module.exports = {
+    reactRules,
+    vueRules,
     env: {
         node: true,
         browser: true,
