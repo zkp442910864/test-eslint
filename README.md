@@ -1,6 +1,12 @@
 # @zzzz-/eslint-config-test
 
 
+[eslint 规则](https://eslint.org/docs/rules/)
+[eslint 规则（中文](https://cn.eslint.org/docs/rules/)
+[typescript-eslint 规则](https://typescript-eslint.io/rules/indent/)
+[vue-eslint 规则](https://eslint.vuejs.org/rules/max-attributes-per-line.html)
+
+
 ```js
     // package.json
     {

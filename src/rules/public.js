@@ -73,7 +73,7 @@ module.exports = {
     'object-curly-spacing': [2, 'never'], // 大括号内是否允许不必要的空格
     'space-in-parens': [2, 'never'], // 小括号里面要不要有空格
     'spaced-comment': 2, // 注释风格要不要有空格什么的
-    'lines-between-class-members': 2, // 要求或禁止在类成员之间出现空行
+    'lines-between-class-members': ['error', 'always', {exceptAfterSingleLine: true}], // 要求或禁止在类成员之间出现空行
     // 在对象文字属性中强制键和值之间的间距一致
     'key-spacing': [2, {afterColon: true, beforeColon: false}],
     // 需要在中缀运算符周围留有间距
