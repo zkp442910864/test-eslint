@@ -3,6 +3,8 @@
 
 [eslint 规则](https://eslint.org/docs/rules/)
 
+[eslint 配置说明（中文](https://cn.eslint.org/docs/user-guide/configuring/)
+
 [eslint 规则（中文](https://cn.eslint.org/docs/rules/)
 
 [typescript-eslint 规则](https://typescript-eslint.io/rules/indent/)
