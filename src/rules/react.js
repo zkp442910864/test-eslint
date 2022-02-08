@@ -107,9 +107,15 @@ module.exports = {
         callbacksLast: true,
     }],
     // 在 JSX 中验证右括号前的间距
-    'react/jsx-space-before-closing': [2, 'always'],
+    // 'react/jsx-space-before-closing': [2, 'always'],
+    'react/jsx-space-before-closing': 0,
     // 验证 JSX 左括号和右括号中的空格
-    'react/jsx-tag-spacing': [2],
+    'react/jsx-tag-spacing': [2, {
+        closingSlash: 'never',
+        beforeSelfClosing: 'always',
+        afterOpening: 'never',
+        beforeClosing: 'never',
+    }],
     // 防止 JSX 中使用的变量被错误地标记为未使用
     'react/jsx-uses-vars': [1],
     // 防止多行 JSX 周围缺少括号
