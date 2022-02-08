@@ -1,18 +1,12 @@
 // https://cn.eslint.org/docs/user-guide/getting-started
 // https://cn.eslint.org/docs/user-guide/configuring
-// (() => {console.log(12, {a: 1});})();
 
 const importRules = require('./src/rules/import');
 const publicRules = require('./src/rules/public');
-const reactRules = require('./src/rules/react');
-const vueRules = require('./src/rules/vue');
+// const reactRules = require('./src/rules/react');
+// const vueRules = require('./src/rules/vue');
 
-const otherRules = {
-    reactRules,
-    vueRules,
-};
-
-const config = {
+module.exports = {
     env: {
         node: true,
         browser: true,
@@ -45,12 +39,8 @@ const config = {
     },
     plugins: [
         '@typescript-eslint',
-        'react',
     ],
     settings: {
-        react: {
-            version: 'detect',
-        },
         'import/extensions': ['.ts', '.js', '.jsx', '.json'],
         'import/resolver': {
             alias: {
@@ -67,11 +57,7 @@ const config = {
     },
     rules: {
         // TODO: 0|off关闭 1|wran警告 2|error错误
-        // ...reactRules,
         ...importRules,
         ...publicRules,
     },
 };
-
-config.__proto__ = otherRules;
-module.exports = config;

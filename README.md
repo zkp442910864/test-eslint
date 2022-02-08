@@ -33,21 +33,29 @@
 
 ```js
     // react .eslintrc.js
-    const allConfig = require('@zzzz-/eslint-config-test');
+    const reactRules = require('@zzzz-/eslint-config-test/src/rules/react');
     module.exports = {
         extends: [
             'plugin:react/recommended',
             '@zzzz-/eslint-config-test',
         ],
+        plugins: [
+            'react',
+        ],
+        settings: {
+            react: {
+                version: 'detect',
+            },
+        },
         rules: {
-            ...allConfig.reactRules
+            ...reactRules
         },
     }
 ```
 
 ```js
     // vue .eslintrc.js
-    const allConfig = require('@zzzz-/eslint-config-test');
+    const vueRules = require('@zzzz-/eslint-config-test/src/rules/vue');
     module.exports = {
         // https://eslint.vuejs.org/user-guide/#usage
         extends: [
@@ -63,12 +71,12 @@
             {
                 files: ['*.vue', '*.nvue'],
                 rules: {
-                    ...allConfig.vueRules
+                    ...vueRules
                 },
             },
         ],
         rules: {
-            // ...allConfig.vueRules
+            // ...vueRules
         },
     }
 ```
