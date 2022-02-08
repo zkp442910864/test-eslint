@@ -9,6 +9,8 @@
 
 [vue-eslint 规则](https://eslint.vuejs.org/rules/max-attributes-per-line.html)
 
+[react-eslint 规则](https://github.com/yannickcr/eslint-plugin-react)
+
 ```js
     // package.json
     {
