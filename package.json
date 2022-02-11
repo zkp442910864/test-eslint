@@ -9,11 +9,23 @@
         "test2": "npm publish"
     },
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "repository": {
         "type": "git",
         "url": "https://github.com/zkp442910864/test-eslint"
     },
+    "keywords": [
+        "eslint",
+        "react",
+        "vue",
+        "typeScript"
+    ],
+    "files": [
+        ".eslintrc.js",
+        "index.js",
+        "src/rules/react.js",
+        "src/rules/vue.js"
+    ],
     "dependencies": {
         "@typescript-eslint/eslint-plugin": "^5.9.1",
         "@typescript-eslint/parser": "^5.9.1",

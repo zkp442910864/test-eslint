@@ -11,9 +11,7 @@ module.exports = {
         node: true,
         browser: true,
         commonjs: true,
-        // amd: true,
     },
-    // https://eslint.org/docs/user-guide/configuring/ignoring-code
     ignorePatterns: [
         '!.eslintrc.js',
     ],

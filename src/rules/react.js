@@ -138,6 +138,7 @@ module.exports = {
         groups: {
             lifecycle: [
                 'state',
+                'constructor',
                 'componentWillMount',
                 'componentDidMount',
                 'componentWillReceiveProps',

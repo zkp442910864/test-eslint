@@ -1,17 +1,13 @@
 # @zzzz-/eslint-config-test
 
 
-[eslint 规则](https://eslint.org/docs/rules/)
-
-[eslint 配置说明（中文](https://cn.eslint.org/docs/user-guide/configuring/)
-
-[eslint 规则（中文](https://cn.eslint.org/docs/rules/)
-
-[typescript-eslint 规则](https://typescript-eslint.io/rules/indent/)
-
-[vue-eslint 规则](https://eslint.vuejs.org/rules/max-attributes-per-line.html)
-
-[react-eslint 规则](https://github.com/yannickcr/eslint-plugin-react)
+- [eslint 规则](https://eslint.org/docs/rules/)
+- [eslint 忽略配置](https://eslint.org/docs/user-guide/configuring/ignoring-code)
+- [eslint 配置说明（中文](https://cn.eslint.org/docs/user-guide/configuring/)
+- [eslint 规则（中文](https://cn.eslint.org/docs/rules/)
+- [typescript-eslint 规则](https://typescript-eslint.io/rules/indent/)
+- [vue-eslint 规则](https://eslint.vuejs.org/rules/max-attributes-per-line.html)
+- [react-eslint 规则](https://github.com/yannickcr/eslint-plugin-react)
 
 ```js
     // package.json
